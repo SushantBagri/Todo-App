@@ -38,7 +38,8 @@ knex.schema.createTable('city', function (table) {
 // Create Table todos;
 knex.schema.createTable('todos', function (table) {
     table.increments('id').primary();
-    table.integer('assignedTo').notNullable();
+    table.integer('assignedTo').unsigned().notNullable();
+    table.foreign('assignedTo').references('user.id')
     table.date('dueDate').notNullable();
     table.varchar('text').notNullable();
 }).then(() => {

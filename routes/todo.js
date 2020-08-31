@@ -37,6 +37,7 @@ module.exports = (todo, knex, moment, isUserAuthenticated) => {
                         })
                         .catch(err => {
                             console.log(err);
+                            res.send('there is an error please check your inputs fields');
                         })
                 })
                 .catch(err => {
